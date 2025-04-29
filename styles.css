@@ -1,0 +1,63 @@
+* {
+    --animation-speed: .5s;
+}
+
+body {
+    font-family: sans-serif;
+    color: white;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+}
+
+table, th {
+    border-collapse: collapse;
+    border: 2px solid #222;
+    background-color: #009067;
+}
+
+th {
+    padding: 4px;
+}
+
+.disc {
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: background-color var(--animation-speed), border var(--animation-speed);
+}
+
+.valid {
+    border-color: #222;
+}
+
+.white {
+    background-color: white;
+    border-color: #222;
+    animation: whiteAnimation var(--animation-speed);
+}
+
+.black {
+    background-color: #222;
+    border-color: #222;
+    animation: blackAnimation var(--animation-speed);
+}
+
+@keyframes blackAnimation {
+    0% {
+        transform: scaleY(-1);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes whiteAnimation {
+    100% {
+        transform: scaleY(-1);
+    }
+    0% {
+        transform: scaleY(1);
+    }
+}
